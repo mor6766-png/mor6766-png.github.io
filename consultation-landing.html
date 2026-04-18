@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שיחת ייעוץ חינמית להורים | מור אנניה ביטאו</title>
+  <meta name="description" content="30 דקות אישיות, בלי התחייבות. נכיר, נבין איפה את נמצאת, ואזהה אם אוכל לעזור." />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf6f1;
+      --warm-white: #fffcf8;
+      --accent: #d97757;
+      --accent-dark: #b85a3e;
+      --accent-soft: #fde8dd;
+      --text-dark: #2a2018;
+      --text-mid: #5a4a3e;
+      --text-soft: #8a7868;
+      --sage: #7a9b7e;
+      --border: #e8dfd3;
+      --highlight: #fff4b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--warm-white);
+      color: var(--text-dark);
+      font-family: 'Heebo', 'Assistant', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-bar {
+      background: var(--text-dark);
+      color: white;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+    }
+    .top-bar strong { font-weight: 700; color: #ffd89e; }
+
+    .hero {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+      padding: 32px 20px 48px;
+    }
+    .hero-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .author-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 6px 14px 6px 14px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .emotional-hook {
+      font-size: 1rem;
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 7vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .hero-title .highlight {
+      background: linear-gradient(180deg, transparent 55%, var(--highlight) 55%);
+      padding: 0 4px;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      line-height: 1.6;
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-main {
+      display: block;
+      background: var(--accent);
+      color: white;
+      padding: 18px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(217, 119, 87, 0.35);
+      transition: all 0.25s ease;
+      margin: 0 auto 10px;
+      max-width: 420px;
+    }
+    .cta-main:hover, .cta-main:active {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(217, 119, 87, 0.45);
+    }
+
+    .cta-sub-text {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+    }
+    .cta-sub-text strong { color: var(--text-mid); }
+
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+    .trust-item svg {
+      width: 16px; height: 16px;
+      color: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .pain-section {
+      background: white;
+      padding: 48px 20px;
+      border-top: 1px solid var(--border);
+    }
+    .pain-inner { max-width: 560px; margin: 0 auto; }
+    .pain-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pain-list li {
+      background: var(--cream);
+      padding: 16px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      color: var(--text-mid);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      line-height: 1.55;
+    }
+    .pain-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .pain-bottom {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 16px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+    }
+
+    .what-section {
+      padding: 56px 20px;
+      background: var(--cream);
+    }
+    .what-inner { max-width: 560px; margin: 0 auto; }
+    .eyebrow {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent-dark);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
+    .what-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .what-item {
+      background: white;
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid var(--border);
+    }
+    .what-icon {
+      background: var(--accent-soft);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .what-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+    }
+    .what-content { flex: 1; }
+    .what-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .what-desc {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    .mid-cta {
+      padding: 40px 20px;
+      text-align: center;
+      background: var(--warm-white);
+    }
+    .mid-cta-inner { max-width: 480px; margin: 0 auto; }
+    .mid-cta-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .mid-cta-text {
+      color: var(--text-mid);
+      margin-bottom: 24px;
+      font-size: 0.98rem;
+    }
+
+    .about-section {
+      padding: 48px 20px;
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+    .about-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-quote {
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      padding: 0 12px;
+      font-style: italic;
+    }
+    .about-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .about-role {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      margin-bottom: 20px;
+    }
+    .about-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--cream);
+      padding: 18px;
+      border-radius: 10px;
+      text-align: right;
+    }
+    .credential {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+    }
+    .credential::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .final-cta {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      padding: 56px 20px;
+      text-align: center;
+      color: white;
+    }
+    .final-cta-inner { max-width: 520px; margin: 0 auto; }
+    .final-cta-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .final-cta-sub {
+      font-size: 1rem;
+      margin-bottom: 28px;
+      opacity: 0.95;
+    }
+    .cta-white {
+      display: block;
+      background: white;
+      color: var(--accent-dark);
+      padding: 18px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      max-width: 420px;
+      margin: 0 auto 12px;
+    }
+    .cta-white:hover { transform: translateY(-1px); }
+
+    .reassurance-box {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .reassurance-box strong { display: block; margin-bottom: 4px; font-size: 0.95rem; }
+
+    .faq-section {
+      padding: 48px 20px;
+      background: var(--cream);
+    }
+    .faq-inner { max-width: 560px; margin: 0 auto; }
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .faq-question {
+      padding: 16px 18px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 18px;
+      font-size: 0.93rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 18px 18px;
+    }
+
+    footer {
+      background: var(--text-dark);
+      padding: 24px 20px;
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: white;
+      padding: 12px 16px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      z-index: 100;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      border-top: 1px solid var(--border);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    @media (min-width: 720px) {
+      .hero { padding: 56px 20px 64px; }
+      .hero-title { font-size: 2.8rem; }
+      .section-title { font-size: 2rem; }
+      .final-cta-title { font-size: 2rem; }
+    }
+  </style>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLDZB28YBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QLDZB28YBE');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2146333756201607');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2146333756201607&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <script>
+  function trackLead() {
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead');
+    }
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {currency: 'ILS', value: 0});
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div class="top-bar">
+  🌿 <strong>שיחת היכרות חינמית</strong> · 30 דקות · ללא התחייבות
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="author-tag">
+      מור אנניה ביטאו · מדריכת הורים
+    </div>
+    
+    <p class="emotional-hook">בלי שיפוט. בלי הרצאות. בלי "את צריכה להיות סבלנית".</p>
+    
+    <h1 class="hero-title">
+      את רוצה להפסיק להיות <span class="highlight">האמא הצועקת</span> —<br>
+      אבל הילד לא מקשיב לך
+    </h1>
+    
+    <p class="hero-sub">
+      בואי נכיר ב-30 דקות אישיות. נבין איפה את באמת נמצאת, ונזהה יחד אם ואיך אוכל לעזור לך לצאת מהמקום הזה.
+    </p>
+
+    <a href="https://morananyaparenting.setmore.com/services/36da30f0-7e1c-46ad-9b2a-9d9504cdce6f" target="_blank" class="cta-main" onclick="trackLead();">
+      לקביעת השיחה — בחרי זמן ביומן ←
+    </a>
+    
+    <p class="cta-sub-text">
+      <strong>חינם</strong> · 30 דקות · ללא התחייבות
+    </p>
+
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        יומן אונליין
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        מאמא לאמא
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z"/>
+        </svg>
+        מוסמכת במקצוע
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pain-section">
+  <div class="pain-inner">
+    <h2 class="pain-title">את מכירה את הרגעים האלה?</h2>
+    <ul class="pain-list">
+      <li>את מבקשת פעם, פעמיים, חמש פעמים — והצעקה פשוט יוצאת</li>
+      <li>הילד לא שומע אותך, מתנגד לכל בקשה, או נכנס לטירוף כשאת אומרת "לא"</li>
+      <li>את יודעת שאת לא רוצה להיות "אמא צועקת", אבל ברגע האמת — את לא מצליחה לעצור</li>
+      <li>את מרגישה שכבר ניסית הכל ושום דבר לא עובד</li>
+      <li>את מחפשת מישהי שתבין אותך — בלי לשפוט, בלי להגיד לך "את צריכה לנשום"</li>
+    </ul>
+    <div class="pain-bottom">
+      אם לפחות אחד מהמשפטים האלה מרגיש מוכר —<br>
+      השיחה הזו נכתבה בדיוק בשבילך.
+    </div>
+  </div>
+</section>
+
+<section class="what-section">
+  <div class="what-inner">
+    <div class="eyebrow">מה נעשה בשיחה</div>
+    <h2 class="section-title">30 דקות אישיות איתי</h2>
+    <p class="section-sub">לא שיחת מכירה. לא סקר. שיחה אמיתית שתעזור לך להבין איפה את.</p>
+
+    <div class="what-list">
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="what-content">
+          <div class="what-name">תספרי לי איפה את נמצאת</div>
+          <div class="what-desc">בלי להיות מבוכה, בלי להתבייש. תספרי מה הכי שורף אותך בבית — ואני אקשיב באמת.</div>
+        </div>
+      </div>
+
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <div class="what-content">
+          <div class="what-name">נבין יחד מה באמת קורה</div>
+          <div class="what-desc">לפעמים הבעיה היא לא מה שאת חושבת. נזהה את הדפוס האמיתי — ואת הטריגר האמיתי.</div>
+        </div>
+      </div>
+
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <div class="what-content">
+          <div class="what-name">תצאי עם כיוון ברור</div>
+          <div class="what-desc">גם אם לא נעבוד יחד — תצאי מהשיחה עם הבנה חדשה ותחושה שיש אור בקצה המנהרה.</div>
+        </div>
+      </div>
+
+      <div class="what-item">
+        <div class="what-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <div class="what-content">
+          <div class="what-name">אחרי השיחה — את בוחרת</div>
+          <div class="what-desc">אם את מרגישה שאנחנו מתחברות ושזה מתאים — נדבר על ליווי. אם לא — תצאי עם כלים חדשים וזהו.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mid-cta">
+  <div class="mid-cta-inner">
+    <h2 class="mid-cta-title">השיחה חינם לגמרי.<br>את צריכה רק לבחור זמן שנוח לך.</h2>
+    <p class="mid-cta-text">אני זמינה בימים ראשון-חמישי, בצהריים או בערב אחרי שהילדים ישנים. בחרי את מה שמתאים לך ביומן.</p>
+    
+    <a href="https://morananyaparenting.setmore.com/services/36da30f0-7e1c-46ad-9b2a-9d9504cdce6f" target="_blank" class="cta-main" onclick="trackLead();">
+      בחרי זמן ביומן שלי ←
+    </a>
+    <p class="cta-sub-text">יקח לך פחות מדקה</p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-inner">
+    <p class="about-quote">
+      "הגעתי לתחום הזה מהחיים — מהרגעים האלה שאת מכירה. אני כאן בשבילך, בלי לשפוט, בלי להרצות."
+    </p>
+    <div class="about-name">מור אנניה ביטאו</div>
+    <div class="about-role">מדריכת הורים לגיל הרך · מנחת קבוצות · אמא לשתי בנות</div>
+    
+    <div class="about-credentials">
+      <div class="credential">מוסמכת כמדריכת הורים — גישת הפסיכולוגיה החיובית</div>
+      <div class="credential">מנחת קבוצות הורים מוסמכת</div>
+      <div class="credential">התמחות בגיל הרך (0-6)</div>
+      <div class="credential">גישה מבוססת חיבור, הבנה ותמיכה — לא שיפוט</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="eyebrow">שאלות נפוצות</div>
+    <h2 class="section-title" style="margin-bottom: 28px;">לפני שאת קובעת</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">השיחה באמת חינם? יש הפתעות?</div>
+      <div class="faq-answer">כן, השיחה חינמית לחלוטין. 30 דקות, בלי התחייבות. אחרי השיחה, אם נרגיש שמתאים — אספר לך על אפשרויות ליווי. אם לא — נפרדות כחברות. זה באמת פשוט.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">איך השיחה מתקיימת?</div>
+      <div class="faq-answer">בטלפון או ב-Zoom, מה שנוח לך. ברגע שתקבעי זמן ביומן, תקבלי מייל אישור עם כל הפרטים.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">אני לא בטוחה שהבעיה שלי "מספיק רצינית"</div>
+      <div class="faq-answer">אין דבר כזה "לא מספיק רציני". אם את כאן — את כבר יודעת שמשהו בתוכך רוצה אחרת. זה מספיק. אני לא כאן לדרג בעיות, אלא להקשיב.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">מה אם אחרי השיחה אני ארצה להמשיך?</div>
+      <div class="faq-answer">אם תרצי, אספר לך על חבילות הליווי האישי שלי. יש כמה אפשרויות בהיקפים ומחירים שונים. את בוחרת מה מתאים לך — או לא לבחור בכלל. אין לחץ.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">למי השיחה מתאימה?</div>
+      <div class="faq-answer">לאמהות לילדים בגיל הרך (0-6) שמרגישות שהן "בקצה" — שיש להן כעס שלא נמצא להם מקום, שהצעקות התחילו להרגיש לא נשלטות, או שהקשר עם הילד נפגע ורוצות לחדש אותו.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">מה אם אני לא זמינה בזמנים שהצעת?</div>
+      <div class="faq-answer">אני זמינה בימים ראשון-חמישי, בשעות 10:00-13:00 ו-20:30-22:00. אם אף אחד מהזמנים לא מתאים, כתבי לי במייל (mor.parenting@gmail.com) ונמצא פתרון.</div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2 class="final-cta-title">את לא חייבת להישאר עם זה לבד.</h2>
+    <p class="final-cta-sub">30 דקות אישיות · חינם · בלי התחייבות</p>
+    
+    <a href="https://morananyaparenting.setmore.com/services/36da30f0-7e1c-46ad-9b2a-9d9504cdce6f" target="_blank" class="cta-white" onclick="trackLead();">
+      כן, אני רוצה לקבוע שיחה ←
+    </a>
+    <p style="font-size: 0.85rem; opacity: 0.9;">השיחה תיקבע מיד אחרי בחירת זמן ביומן</p>
+
+    <div class="reassurance-box">
+      <strong>🌿 ההבטחה שלי אלייך</strong>
+      זו לא שיחת מכירה. אני לא אלחץ עלייך לקנות כלום. המטרה של השיחה היא לעזור לך לראות את הדברים בבהירות — ואחר כך את מחליטה.
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 מור אנניה ביטאו — מדריכת הורים לגיל הרך<br>
+  כל הזכויות שמורות · <a href="terms.html">תקנון</a>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://morananyaparenting.setmore.com/services/36da30f0-7e1c-46ad-9b2a-9d9504cdce6f" target="_blank" class="sticky-cta-btn" onclick="trackLead();">
+    לקביעת שיחה חינמית ←
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+
+  const sticky = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  });
+</script>
+
+</body>
+</html>
