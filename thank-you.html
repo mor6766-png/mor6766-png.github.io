@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>תודה על הרכישה! | מור אנניה ביטאו</title>
+  <meta name="description" content="המדריך שלך מוכן" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Assistant:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf6f1;
+      --warm-white: #fffcf8;
+      --accent: #d97757;
+      --accent-dark: #b85a3e;
+      --accent-soft: #fde8dd;
+      --text-dark: #2a2018;
+      --text-mid: #5a4a3e;
+      --text-soft: #8a7868;
+      --sage: #7a9b7e;
+      --border: #e8dfd3;
+      --highlight: #fff4b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--warm-white) 100%);
+      color: var(--text-dark);
+      font-family: 'Heebo', 'Assistant', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 48px 20px 32px;
+    }
+
+    .checkmark-wrap {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--sage);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(122, 155, 126, 0.3);
+      animation: pop 0.5s ease-out;
+    }
+    .checkmark svg {
+      width: 40px;
+      height: 40px;
+      color: white;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      margin-bottom: 40px;
+    }
+
+    .download-card {
+      background: white;
+      border: 2px solid var(--accent-soft);
+      border-radius: 16px;
+      padding: 28px 24px;
+      margin-bottom: 32px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(217, 119, 87, 0.1);
+    }
+
+    .download-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .download-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      padding: 18px 32px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(217, 119, 87, 0.35);
+      transition: all 0.25s ease;
+      width: 100%;
+      max-width: 360px;
+    }
+    .download-btn:hover, .download-btn:active {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(217, 119, 87, 0.45);
+    }
+    .download-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .download-hint {
+      margin-top: 16px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .instructions-box {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 32px;
+    }
+    .instructions-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .instructions-list {
+      list-style: none;
+      counter-reset: step;
+    }
+    .instructions-list li {
+      counter-increment: step;
+      padding: 8px 0 8px 0;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.55;
+      position: relative;
+      padding-right: 32px;
+    }
+    .instructions-list li::before {
+      content: counter(step);
+      position: absolute;
+      right: 0;
+      top: 8px;
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .personal-msg {
+      text-align: center;
+      padding: 28px 20px;
+      margin-bottom: 32px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .personal-msg p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .personal-msg p:last-child { margin-bottom: 0; }
+    .personal-msg .signature {
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      margin-top: 16px;
+    }
+
+    .follow-section {
+      text-align: center;
+      padding: 24px 20px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+    .follow-label {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+    .follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text-dark);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .follow-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+    .follow-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      padding: 16px 0;
+    }
+    .footer-note a {
+      color: var(--text-mid);
+      text-decoration: underline;
+    }
+
+    @media (min-width: 720px) {
+      h1 { font-size: 2.4rem; }
+      .container { padding: 64px 20px 40px; }
+    }
+  </style>
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2146333756201607');
+  fbq('track', 'PageView');
+  fbq('track', 'Purchase', {value: 29, currency: 'ILS'});
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2146333756201607&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLDZB28YBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QLDZB28YBE');
+    gtag('event', 'purchase', {
+      value: 29,
+      currency: 'ILS',
+      items: [{
+        item_name: 'מדריך איך להפסיק לצעוק על הילדים',
+        price: 29,
+        quantity: 1
+      }]
+    });
+  </script>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="checkmark-wrap">
+    <div class="checkmark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+  </div>
+
+  <h1>התשלום התקבל!</h1>
+  <p class="subtitle">המדריך שלך מוכן להורדה 🌿</p>
+
+  <div class="download-card">
+    <div class="download-label">המדריך שלך</div>
+    <div class="download-title">איך להפסיק לצעוק על הילדים —<br>גם כשאת בשיא הלחץ</div>
+    
+    <a href="https://drive.google.com/file/d/1BP9sU3zn63rX-JGnhCYFxui2PDQfPvoz/view?usp=sharing" target="_blank" class="download-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      לחצי כאן להורדת המדריך
+    </a>
+    
+    <p class="download-hint">
+      הלינק נשמר אצלך גם במייל שקיבלת
+    </p>
+  </div>
+
+  <div class="instructions-box">
+    <div class="instructions-title">איך שומרים את המדריך אצלך במחשב או בטלפון:</div>
+    <ol class="instructions-list">
+      <li>לוחצים על הכפתור הכתום למעלה</li>
+      <li>המדריך נפתח בחלון חדש</li>
+      <li>לוחצים על אייקון ההורדה (חץ כלפי מטה) בפינה השמאלית העליונה</li>
+      <li>הקובץ יישמר אצלך — תוכלי לחזור אליו מתי שתרצי</li>
+    </ol>
+  </div>
+
+  <div class="personal-msg">
+    <p>
+      את עצרת. את החלטת לעשות משהו אחר.<br>
+      זה לא מובן מאליו.
+    </p>
+    <p>
+      הכלים שבמדריך הם אותם כלים שליוו אותי ואת האמהות שעבדתי איתן. 
+      יישמי מה שמתאים לך, התחילי מקטן, ותהיי סלחנית עם עצמך בדרך.
+    </p>
+    <p class="signature">
+      באהבה,<br>
+      מור אנניה ביטאו
+    </p>
+  </div>
+
+  <div class="follow-section">
+    <div class="follow-label">בואי נישאר בקשר</div>
+    <a href="https://www.instagram.com/" target="_blank" class="follow-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      עקבי באינסטגרם
+    </a>
+  </div>
+
+  <p class="footer-note">
+    יש שאלה? כתבי לי: <a href="mailto:mor.parenting@gmail.com">mor.parenting@gmail.com</a>
+  </p>
+
+</div>
+
+</body>
+</html>
